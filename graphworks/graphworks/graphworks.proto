@@ -1,0 +1,40 @@
+// Go Toys contains examples for visualizing platform dependencies discovered
+// with any kind of crawler as a graph.
+//  Copyright (C) 2023 Ele Munjeli
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+syntax = "proto3";
+
+option go_package = "github.com/munjeli/go-toys/graphworks/graphworks";
+
+package graphworks;
+
+// The graphing service definition.
+service  Grapher {
+  // Takes a graph and a node and returns a list of adjacent nodes.
+  rpc ListAdjacentNodesTo (GrapherRequest) returns (GrapherResponse) {}
+}
+
+// The request message containing the graph and target node.
+message GrapherRequest {
+  
+}
+
+// The response message containing the list of adjacent nodes
+message GrapherResponse {
+
+}
+
+

@@ -27,14 +27,30 @@ service  Grapher {
   rpc ListAdjacentNodesTo (GrapherRequest) returns (GrapherResponse) {}
 }
 
+message Edge {
+  string first = 1;
+  string second = 2;
+}
+
+message Node {
+  string node_name = 1;
+}
+
+message Graph {
+  string name = 1;
+  repeated Edge edges = 2;
+}
+
 // The request message containing the graph and target node.
 message GrapherRequest {
-  
+  Graph graph = 1;
+  Node start_node = 2;
 }
 
 // The response message containing the list of adjacent nodes
 message GrapherResponse {
-
+  Graph adjacent_graph = 1;
+  Node center_node = 2;
 }
 
 
